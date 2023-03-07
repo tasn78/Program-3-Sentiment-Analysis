@@ -1,0 +1,10 @@
+﻿  Functions for Sentiment.cpp
+C:\Users\Owner\Documents\GitHub\lab05-tasn78\Program 3 Sentiment Analysis\Program 3 Sentiment Analysis\Functions for Sentiment.cpp(14,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Owner\Documents\GitHub\lab05-tasn78\Program 3 Sentiment Analysis\Program 3 Sentiment Analysis\Functions for Sentiment.cpp(68,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Owner\Documents\GitHub\lab05-tasn78\Program 3 Sentiment Analysis\Program 3 Sentiment Analysis\Functions for Sentiment.cpp(122,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Owner\Documents\GitHub\lab05-tasn78\Program 3 Sentiment Analysis\Program 3 Sentiment Analysis\Functions for Sentiment.cpp(124,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Owner\Documents\GitHub\lab05-tasn78\Program 3 Sentiment Analysis\Program 3 Sentiment Analysis\Functions for Sentiment.cpp(127,21): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Program 3 Sentiment Analysis Main.cpp
+  Generating Code...
+C:\Users\Owner\Documents\GitHub\lab05-tasn78\Program 3 Sentiment Analysis\Program 3 Sentiment Analysis\Functions for Sentiment.cpp(142): warning C4715: 'wordAndSentiment': not all control paths return a value
+  Program 3 Sentiment Analysis.vcxproj -> C:\Users\Owner\Documents\GitHub\lab05-tasn78\Program 3 Sentiment Analysis\x64\Debug\Program 3 Sentiment Analysis.exe
