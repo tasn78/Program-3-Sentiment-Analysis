@@ -130,12 +130,14 @@
     <ClInclude Include="sentiment.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Functions for Sentiment.cpp" />
+    <ClCompile Include="FinalSentimentsFunctions.cpp" />
     <ClCompile Include="Program 3 Sentiment Analysis Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="review1.txt" />
     <Text Include="review2.txt" />
+    <Text Include="review3.txt" />
+    <Text Include="review4.txt" />
     <Text Include="sentiment.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -23,7 +23,7 @@
     <ClCompile Include="Program 3 Sentiment Analysis Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Functions for Sentiment.cpp">
+    <ClCompile Include="FinalSentimentsFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,6 +35,12 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="sentiment.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="review3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="review4.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

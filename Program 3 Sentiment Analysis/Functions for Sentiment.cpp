@@ -92,17 +92,8 @@ vector<string> textWithSentiment(vector<string> textWithSentiment, vector<sentIn
 	return textSentiment;
 }
 
-vector<string> sentimentWords(vector<int> reviewIndexToChange, vector<string> reviewToChange) {
-	vector<string> sentimentWordV;
-	int index;
-	for (int i = 0; i < reviewIndexToChange.size() - 1; i++) {
-		index = reviewIndexToChange[i];
-		sentimentWordV.push_back(reviewToChange[index]);
-	}
-	return sentimentWordV;
-}
 
-/*vector<punctuation> getPunctuation(vector<string> onlySentimentWords) {
+vector<punctuation> getPunctuation(vector<string> onlySentimentWords) {
 	vector<punctuation> punctuationUsed;
 	char punctInString;
 	int index;
@@ -115,7 +106,7 @@ vector<string> sentimentWords(vector<int> reviewIndexToChange, vector<string> re
 	}
 }
 // https://stackoverflow.com/questions/49294428/find-punctuation-in-string-c
-*/
+
 
 sentInfo wordAndSentiment(vector<sentInfo>& wordV, string &word) {
 	int low = 0;
@@ -161,3 +152,83 @@ float sumOfSentiment(vector<sentInfo>& v2) {
 	return sentimentSum;
 }
 
+string userChangeToReview() {
+	string optionChoice;
+	while (true) {
+		cout << "What would you like to do?" << endl << endl;
+		cout << "P - Change from Negative to Positive" << endl;
+		cout << "N - Change from Positive to Negative" << endl;
+		cout << "Q - Quit" << endl;
+		cin >> optionChoice;
+		if (optionChoice == "p" || optionChoice == "P") {
+			return "P";
+		}
+		else if (optionChoice == "n" || optionChoice == "N") {
+			return "N";
+		}
+		else if (optionChoice == "q" || optionChoice == "Q") {
+			return "Q";
+		}
+		else {
+			cout << "Please enter P, N, or Q." << endl;
+				continue;
+		}
+	}
+}
+
+void positiveSentimentChange(vector<string>& reviewToChange, vector<string>& onlySentimentWords, vector<sentInfo>& negWords) {
+	vector<sentInfo> negToReplace;
+	vector<int> indexToSwitch;
+	srand(time(NULL));
+	char punct;
+	for (auto i = 0; i < negWords.size(); ++i) {
+		if (negWords[i].value < -1) {
+			negToReplace.push_back(negWords[i]);
+		}
+	}
+
+	indexToSwitch = indexToChange(reviewToChange, negWords);
+
+	for (auto i = 0; i < indexToSwitch.size(); ++i) {
+		int k = indexToSwitch[i];
+		for (int y; y < reviewToChange[k].length(); ++y) {
+			if (ispunct(reviewToChange[k][y])) {
+				punct = reviewToChange[k][y];
+			}
+		}
+		reviewToChange[k] = negWords[rand() % negWords.size() - 1].word;
+	}
+}
+
+void negativeSentimentChange(vector<string>& reviewToChange, vector<string>& onlySentimentWords, vector<sentInfo> posWords) {
+
+}
+
+vector<int> indexToChange(vector<string> reviewToChange, vector<sentInfo> posOrNegV) {
+	int low = 0;
+	int high = posOrNegV.size() - 1;
+	vector<int> indexToChange;
+
+	for (int i; i < reviewToChange.size(); ++i) {
+		for (int c = 0, len = reviewToChange[i].size(); c < len; c++) {				//https://www.geeksforgeeks.org/removing-punctuations-given-string/
+			if (ispunct(reviewToChange[i][c])) {
+				reviewToChange[c].erase(c--, 1);
+				len = reviewToChange[i].size();
+			}
+		}
+	}
+	for (int x; x < reviewToChange.size(); ++x) {
+		for (int k; k < posOrNegV.size(); k++) {
+			if (posOrNegV[k].word == reviewToChange[x]) {
+				indexToChange.push_back(x);
+			}
+		}
+	}
+	return indexToChange;
+}
+
+void readReviewVector(vector<string> review) {
+	for (auto i = 0; i < review.size(); ++i) {
+		cout << review[i] << " ";
+	}
+}
